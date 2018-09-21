@@ -20,11 +20,11 @@ public class TestSendingEmail {
         enterElement.click();
         WebElement userEmailInput = driver.findElement(By.xpath("//div/div/div/input"));
         userEmailInput.sendKeys("surfakeemail@gmail.com");
-        WebElement nextEmailButton = driver.findElement(By.xpath("//div[@id = 'identifierNext']"));
+        WebElement nextEmailButton = driver.findElement(By.xpath("//div[@id='identifierNext']"));
         nextEmailButton.click();
         WebElement passwordInput = driver.findElement(By.cssSelector("input[name=\"password\"]"));
         passwordInput.sendKeys("Fake123456");
-        WebElement nextPasswordButton = driver.findElement(By.xpath("//div[@id = 'passwordNext']"));
+        WebElement nextPasswordButton = driver.findElement(By.xpath("//div[@id='passwordNext']"));
         nextPasswordButton.click();
         WebElement enterMailElement = driver.findElement(By.cssSelector("a[href=\"https://mail.google.com/mail/?tab=wm\"]"));
         enterMailElement.click();
@@ -38,6 +38,11 @@ public class TestSendingEmail {
         emailText.sendKeys("Hello world!");
         WebElement sendButton = driver.findElement(By.cssSelector("div.T-I.J-J5-Ji.aoO.T-I-atl.L3[role='button']"));
         sendButton.click();
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         driver.quit();
     }
 
